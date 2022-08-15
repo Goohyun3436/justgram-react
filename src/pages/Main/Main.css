@@ -1,0 +1,74 @@
+.to-do {
+  border: 1px solid black;
+}
+
+.custom-margin-left {
+  margin-left: 10px;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.header-wrapper {
+  margin: 0 50px;
+}
+
+.header-text {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+}
+
+.contents-wrapper {
+  margin-top: 80px;
+}
+
+.feed-container {
+  width: 700px;
+  margin-bottom: 10px;
+}
+
+.feed-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.feed-image-wrapper {
+  height: 500px;
+}
+
+.feed-image {
+  height: 100%;
+  width: 100%;
+}
+
+.feed-menu {
+}
+
+.feed-comment {
+}
+
+.feed-comment-like {
+}
+
+.feed-comment-list {
+}
+
+.feed-comment-time {
+}
+
+.feed-comment-write {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-write-input {
+  flex: 1;
+}
+
+.comment-user-ID {
+  font-weight: bold;
+  margin-right: 10px;
+}

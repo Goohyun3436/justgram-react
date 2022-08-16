@@ -1,7 +1,14 @@
 import React from "react";
-import "./Login.css";
+import "./Login.scss";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const goToMain = () => {
+    navigate("/main");
+  };
+
   return (
     <React.Fragment>
       <div className="flex-center container">
@@ -28,7 +35,12 @@ function Login() {
                 />
               </div>
               <div className="flex-center button-wrapper">
-                <button id="login-btn" className="login-button" type="submit">
+                <button
+                  id="login-btn"
+                  className="login-button"
+                  type="submit"
+                  onClick={goToMain}
+                >
                   로그인
                 </button>
               </div>

@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Main.scss";
 import Feed from "./Feed";
 
 function Main() {
+  const [feeds, setFeeds] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/feeds.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setFeeds(data.feeds);
+      });
+  }, []);
+
   return (
     <React.Fragment>
       <header className="to-do header-wrapper spread-row">
@@ -43,9 +53,9 @@ function Main() {
       </header>
       <div className="flex-center">
         <div className="to-do contents-wrapper">
-          <Feed />
-          <Feed />
-          <Feed />
+          {feeds.map((feed) => {
+            return <Feed key={feed.userID} feedData={feed} />;
+          })}
         </div>
       </div>
     </React.Fragment>

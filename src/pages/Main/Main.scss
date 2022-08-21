@@ -45,6 +45,7 @@
 }
 
 .feed-comment-list {
+  list-style: none;
 }
 
 .feed-comment-time {
@@ -62,4 +63,9 @@
 .comment-user-ID {
   font-weight: bold;
   margin-right: 10px;
+}
+
+.comment-date {
+  color: gray;
+  margin-left: 10px;
 }

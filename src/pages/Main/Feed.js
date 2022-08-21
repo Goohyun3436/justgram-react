@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./Main.scss";
+import CommentList from "./CommentList";
 
 function Feed() {
   // 기존 댓글 input state
@@ -43,17 +43,22 @@ function Feed() {
     }
   };
 
-  //comment 동적 추가
+  // comment 동적 추가
   const addCommnet = () => {
     setId(id + 1);
     const newCommnetInput = {
       id: id,
       content: value.current.value,
+      // value >> {current: input.comment-write-input}
+      // value.current >> input 요소
+      // value.current.value >> input에 적은 value
+      createdAt: new Date().toLocaleString(),
     };
     setCommentArray([...commentArray, newCommnetInput]);
     setCommentInput("");
   };
 
+  // comment 동적 추가 : Enter 이벤트
   const enterDown = (e) => {
     if (e.key === "Enter") {
       addCommnet();
@@ -91,9 +96,7 @@ function Feed() {
             user1 님 외 10명이 좋아합니다
           </div>
           <div className="feed-comment-list padding-10px">
-            {commentArray.map((comment) => {
-              return <li key={comment.id}>{comment.content}</li>;
-            })}
+            <CommentList commentObj={commentArray}></CommentList>
           </div>
           <div className="feed-comment-time padding-10px">9시간 전</div>
           <div className="feed-comment-write padding-10px">
